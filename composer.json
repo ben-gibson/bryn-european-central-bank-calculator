@@ -1,0 +1,50 @@
+{
+  "name": "ben-gibson/currency-conversion-calculator-european-central-bank",
+  "description": "An exchange rate calculator for the `PHP` library [currency-conversion](ben-gibson/currency-conversion) that uses data from the European Central Bank.",
+  "keywords": [
+    "currency",
+    "conversion",
+    "exchange",
+    "rate",
+    "European Central Bank",
+    "calculator"
+  ],
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "homepage": "https://github.com/ben-gibson/currency-conversion-calculator-european-central-bank",
+  "authors": [
+    {
+      "name": "Ben Gibson",
+      "email": "ben.gibson.2011@gmail.com",
+      "homepage": "https://ben-gibson.co.uk"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/ben-gibson/currency-conversion"
+    }
+  ],
+  "require": {
+    "php": "~7.0",
+    "ben-gibson/currency-conversion": "dev-master"
+  },
+  "require-dev": {
+    "phpunit/phpunit" : "~6.0",
+    "squizlabs/php_codesniffer": "~2.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Gibbo\\Currency\\Conversion\\Calculator\\ECB\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Gibbo\\Currency\\Conversion\\Calculator\\ECB\\Test\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "phpunit",
+    "format": "phpcbf --standard=psr2 src/"
+  }
+}
