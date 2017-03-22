@@ -1,6 +1,6 @@
 {
-  "name": "ben-gibson/currency-conversion-calculator-european-central-bank",
-  "description": "An exchange rate calculator for the `PHP` library [currency-conversion](ben-gibson/currency-conversion) that uses data from the European Central Bank.",
+  "name": "ben-gibson/bryn-european-central-bank-calculator",
+  "description": "An exchange rate calculator for the `PHP` library [Bryn](ben-gibson/bryn) that pulls data from the European Central Bank.",
   "keywords": [
     "currency",
     "conversion",
@@ -11,7 +11,7 @@
   ],
   "minimum-stability": "stable",
   "license": "MIT",
-  "homepage": "https://github.com/ben-gibson/currency-conversion-calculator-european-central-bank",
+  "homepage": "https://github.com/ben-gibson/bryn-european-central-bank-calculator",
   "authors": [
     {
       "name": "Ben Gibson",
@@ -22,12 +22,12 @@
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/ben-gibson/currency-conversion"
+      "url": "https://github.com/ben-gibson/bryn"
     }
   ],
   "require": {
     "php": "~7.0",
-    "ben-gibson/currency-conversion": "dev-master"
+    "ben-gibson/bryn": "dev-master"
   },
   "require-dev": {
     "phpunit/phpunit" : "~6.0",
@@ -35,12 +35,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Gibbo\\Currency\\Conversion\\Calculator\\ECB\\": "src"
+      "Gibbo\\Bryn\\Calculator\\ECB\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Gibbo\\Currency\\Conversion\\Calculator\\ECB\\Test\\": "tests"
+      "Gibbo\\Bryn\\Calculator\\ECB\\Test\\": "tests"
     }
   },
   "scripts": {

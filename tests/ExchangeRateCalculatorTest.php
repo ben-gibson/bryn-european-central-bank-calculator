@@ -1,6 +1,6 @@
 <?php
 
-namespace Gibbo\Currency\Conversion\Calculator\ECB\Test;
+namespace Gibbo\Bryn\Calculator\ECB\Test;
 
 use PHPUnit\Framework\TestCase;
 

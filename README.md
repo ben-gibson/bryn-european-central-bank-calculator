@@ -1,15 +1,15 @@
-# Currency Conversion
+# Bryn - European Central Bank Calculator
 
 [![Software License][ico-license]](LICENSE.md)
 
-An exchange rate calculator for the `PHP` library [currency-conversion](ben-gibson/currency-conversion) that uses data from the European Central Bank.
+An exchange rate calculator for [Bryn](https://github.com/ben-gibson/bryn) that pulls data from the European Central Bank.
 
 ## Install
 
 Use composer to install this library.
 
 ``` bash
-$ composer require ben-gibson/currency-conversion-calculator-european-central-bank
+$ composer require ben-gibson/bryn-european-central-bank-calculator
 ```
 
 ## Usage
@@ -19,12 +19,12 @@ $ composer require ben-gibson/currency-conversion-calculator-european-central-ba
 
 require 'vendor/autoload.php';
 
-$calculator = new \Gibbo\Currency\Conversion\Calculator\ECB\ExchangeRateCalculator();
+$calculator = new \Gibbo\Bryn\Calculator\ECB\ExchangeRateCalculator();
 
-$exchangeRate = $calculator->rate(
-    new \Gibbo\Currency\Conversion\Exchange(
-        \Gibbo\Currency\Conversion\Currency::GBP(),
-        \Gibbo\Currency\Conversion\Currency::USD()
+$exchangeRate = $calculator->getRate(
+    new \Gibbo\Bryn\Exchange(
+        \Gibbo\Bryn\Currency::GBP(),
+        \Gibbo\Bryn\Currency::USD()
     )
 );
 

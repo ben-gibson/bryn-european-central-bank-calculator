@@ -1,16 +1,16 @@
 <?php
 
-namespace Gibbo\Currency\Conversion\Calculator\ECB;
+namespace Gibbo\Bryn\Calculator\ECB;
 
-use Gibbo\Currency\Conversion\Currency;
-use Gibbo\Currency\Conversion\Exchange;
-use Gibbo\Currency\Conversion\ExchangeRate;
-use Gibbo\Currency\Conversion\ExchangeRateCalculatorException;
+use Gibbo\Bryn\Currency;
+use Gibbo\Bryn\Exchange;
+use Gibbo\Bryn\ExchangeRate;
+use Gibbo\Bryn\ExchangeRateCalculatorException;
 
 /**
  * Calculates an exchange rate using data published by the European Central Bank.
  */
-class ExchangeRateCalculator implements \Gibbo\Currency\Conversion\ExchangeRateCalculator
+class ExchangeRateCalculator implements \Gibbo\Bryn\ExchangeRateCalculator
 {
 
     private const URL = 'http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml';
@@ -18,7 +18,7 @@ class ExchangeRateCalculator implements \Gibbo\Currency\Conversion\ExchangeRateC
     /**
      * @inheritdoc
      */
-    public function rate(Exchange $exchange): ExchangeRate
+    public function getRate(Exchange $exchange): ExchangeRate
     {
         try {
             $xml = new \SimpleXMLElement(static::URL, 0, true);

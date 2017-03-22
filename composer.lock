@@ -4,38 +4,47 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9499ba2f79817148394cd1a93526dc11",
+    "content-hash": "001b505e21d2332cdf348ed028c747bf",
     "packages": [
         {
-            "name": "ben-gibson/currency-conversion",
+            "name": "ben-gibson/bryn",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/ben-gibson/currency-conversion.git",
-                "reference": "1948439c5b38702162b1443e2d3b26c42f506991"
+                "url": "https://github.com/ben-gibson/bryn.git",
+                "reference": "7a03aa38961a4448caa1692107b9a5f53156e995"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ben-gibson/currency-conversion/zipball/1948439c5b38702162b1443e2d3b26c42f506991",
-                "reference": "1948439c5b38702162b1443e2d3b26c42f506991",
+                "url": "https://api.github.com/repos/ben-gibson/bryn/zipball/7a03aa38961a4448caa1692107b9a5f53156e995",
+                "reference": "7a03aa38961a4448caa1692107b9a5f53156e995",
                 "shasum": ""
             },
             "require": {
                 "php": "~7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~6.0"
+                "phpunit/phpunit": "~6.0",
+                "squizlabs/php_codesniffer": "~2.3"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Gibbo\\Currency\\Conversion\\": "src"
+                    "Gibbo\\Bryn\\": "src"
                 }
             },
             "autoload-dev": {
                 "psr-4": {
-                    "Gibbo\\Currency\\Conversion\\Test\\": "tests"
+                    "Gibbo\\Bryn\\Test\\": "tests"
                 }
+            },
+            "scripts": {
+                "test": [
+                    "phpunit"
+                ],
+                "format": [
+                    "phpcbf --standard=psr2 src/"
+                ]
             },
             "license": [
                 "MIT"
@@ -47,8 +56,8 @@
                     "homepage": "https://ben-gibson.co.uk"
                 }
             ],
-            "description": "A PHP library for calculating monetary conversions. This repository contains the interfaces and core models.",
-            "homepage": "https://github.com/ben-gibson/currency-conversion",
+            "description": "A PHP library for calculating monetary conversions. This repository contains the interfaces and domain models only.",
+            "homepage": "https://github.com/ben-gibson/bryn",
             "keywords": [
                 "conversion",
                 "currency",
@@ -56,10 +65,10 @@
                 "rate"
             ],
             "support": {
-                "source": "https://github.com/ben-gibson/currency-conversion/tree/master",
-                "issues": "https://github.com/ben-gibson/currency-conversion/issues"
+                "source": "https://github.com/ben-gibson/bryn/tree/master",
+                "issues": "https://github.com/ben-gibson/bryn/issues"
             },
-            "time": "2017-03-22 17:18:50"
+            "time": "2017-03-22 21:19:40"
         }
     ],
     "packages-dev": [
@@ -1449,7 +1458,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "ben-gibson/currency-conversion": 20
+        "ben-gibson/bryn": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
