@@ -1,14 +1,17 @@
 # Bryn - European Central Bank Calculator
 
 [![Software License][ico-license]](LICENSE.md)
+[![Build Status](https://travis-ci.org/ben-gibson/bryn-european-central-bank-calculator.svg?branch=master)](https://travis-ci.org/ben-gibson/bryn-european-central-bank-calculator)
 
-An exchange rate calculator for [Bryn](https://github.com/ben-gibson/bryn) that pulls data from the European Central Bank.
+An exchange rate calculator for [Bryn](https://github.com/ben-gibson/bryn) that pulls data from the European Central Bank. [HTTPlug](http://httplug.io/) 
+is used to support multiple `HTTP` clients including `Guzzle`, `Buzz`, and `Curl`.
 
 ## Install
 
-Use composer to install this library.
+Use composer to install this library and your preferred `HTTP` client.
 
 ``` bash
+$ composer require php-http/guzzle6-adapter
 $ composer require ben-gibson/bryn-european-central-bank-calculator
 ```
 
@@ -16,22 +19,29 @@ $ composer require ben-gibson/bryn-european-central-bank-calculator
 
 ``` php
 <?php
-
+    
 require 'vendor/autoload.php';
-
-$calculator = new \Gibbo\Bryn\Calculator\ECB\ExchangeRateCalculator();
-
+    
+$calculator = \Gibbo\Bryn\Calculator\ECB\ExchangeRateCalculator::default();
+    
 $exchangeRate = $calculator->getRate(
     new \Gibbo\Bryn\Exchange(
         \Gibbo\Bryn\Currency::GBP(),
         \Gibbo\Bryn\Currency::USD()
     )
 );
-
+    
 echo $exchangeRate;
-echo PHP_EOL;
 echo $exchangeRate->convert(550);
-echo PHP_EOL;
+echo $exchangeRate->flip()->convert(550);
+    
+/**
+ * OUTPUTS:
+ *
+ * 1 GBP(£) = 1.25 USD($)
+ * 686.2295
+ * 440.814
+ */
 ```
 
 ## Change log
