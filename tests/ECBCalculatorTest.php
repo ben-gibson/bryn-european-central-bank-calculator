@@ -2,7 +2,7 @@
 
 namespace Gibbo\Bryn\Calculator\ECB\Test;
 
-use Gibbo\Bryn\Calculator\ECB\ExchangeRateCalculator;
+use Gibbo\Bryn\Calculator\ECB\ECBCalculator;
 use Gibbo\Bryn\Currency;
 use Gibbo\Bryn\Exchange;
 use Gibbo\Bryn\ExchangeRate;
@@ -16,7 +16,7 @@ use Psr\Http\Message\StreamInterface;
 /**
  * Calculator tests.
  */
-class ExchangeRateCalculatorTest extends TestCase
+class ECBCalculatorTest extends TestCase
 {
 
     /**
@@ -26,7 +26,7 @@ class ExchangeRateCalculatorTest extends TestCase
      */
     public function testCanBeInitialised()
     {
-        $this->assertInstanceOf(ExchangeRateCalculator::class, $this->getCalculator());
+        $this->assertInstanceOf(ECBCalculator::class, $this->getCalculator());
     }
 
     /**
@@ -67,7 +67,7 @@ class ExchangeRateCalculatorTest extends TestCase
      * Test an exception is thrown when an unsupported currency is given.
      *
      * @expectedException \Gibbo\Bryn\ExchangeRateCalculatorException
-     * @expectedExceptionMessage The currency 'USD' is not supported by the calculator (Gibbo\Bryn\Calculator\ECB\ExchangeRateCalculator)
+     * @expectedExceptionMessage The currency 'USD' is not supported by the calculator (Gibbo\Bryn\Calculator\ECB\ECBCalculator)
      *
      * @return void
      */
@@ -197,11 +197,11 @@ XML;
      *
      * @param Client|null $httpClient
      *
-     * @return ExchangeRateCalculator
+     * @return ECBCalculator
      */
-    private function getCalculator(Client $httpClient = null): ExchangeRateCalculator
+    private function getCalculator(Client $httpClient = null): ECBCalculator
     {
-        return new ExchangeRateCalculator(
+        return new ECBCalculator(
             new HttpMethodsClient($httpClient ?: new Client(), MessageFactoryDiscovery::find())
         );
     }

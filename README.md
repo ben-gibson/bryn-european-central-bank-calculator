@@ -22,7 +22,7 @@ $ composer require ben-gibson/bryn-european-central-bank-calculator
     
 require 'vendor/autoload.php';
     
-$calculator = \Gibbo\Bryn\Calculator\ECB\ExchangeRateCalculator::default();
+$calculator = \Gibbo\Bryn\Calculator\ECB\ECBCalculator::default();
     
 $exchangeRate = $calculator->getRate(
     new \Gibbo\Bryn\Exchange(

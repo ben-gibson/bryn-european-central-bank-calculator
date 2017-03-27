@@ -5,6 +5,7 @@ namespace Gibbo\Bryn\Calculator\ECB;
 use Gibbo\Bryn\Currency;
 use Gibbo\Bryn\Exchange;
 use Gibbo\Bryn\ExchangeRate;
+use Gibbo\Bryn\ExchangeRateCalculator;
 use Gibbo\Bryn\ExchangeRateCalculatorException;
 use Http\Client\Common\HttpMethodsClient;
 use Http\Client\HttpClient;
@@ -14,7 +15,7 @@ use Http\Discovery\MessageFactoryDiscovery;
 /**
  * Calculates an exchange rate using data published by the European Central Bank.
  */
-class ExchangeRateCalculator implements \Gibbo\Bryn\ExchangeRateCalculator
+class ECBCalculator implements ExchangeRateCalculator
 {
 
     const URL = 'http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml';
